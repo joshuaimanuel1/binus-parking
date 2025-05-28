@@ -49,17 +49,18 @@ Sistem Parkir Otomatis BINUS dirancang untuk mengelola akses dan monitoring park
 ---
 
 +--------------------+ +-----------------+
-| Frontend | <--HTTP--> | Backend |
-| (React.js) | | (Express.js) |
-| | | |
-| - Scan RFID | | - API Handling |
-| - Manual Input | | - Logic & DB |
-| - Camera + ML | | |
-+--------------------+ +-----------------+
-| |
-| |
-v v
-+------------+ +------------+
-| Kamera & | | Database |
-| TensorFlow | | MySQL |
-+------------+ +------------+
++--------------------+            +-----------------+
+|    Frontend        | <--HTTP--> |   Backend       |
+| (React.js)         |            | (Express.js)    |
+|                    |            |                 |
+| - Scan RFID        |            | - API Handling  |
+| - Manual Input     |            | - Logic & DB    |
+| - Camera + ML      |            |                 |
++--------------------+            +-----------------+
+         |                                  |
+         |                                  |
+         v                                  v
+    +------------+                   +------------+
+    |  Kamera &  |                   |  Database  |
+    | TensorFlow |                   |   MySQL    |
+    +------------+                   +------------+
