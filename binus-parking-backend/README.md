@@ -1,7 +1,3 @@
-Berikut ini adalah isi lengkap untuk dua file `README.md` — satu untuk folder `backend/` dan satu untuk `frontend/`. Kamu tinggal **copy-paste** ke masing-masing file tersebut:
-
----
-
 ### ✅ `backend/README.md`
 
 ```markdown
@@ -21,8 +17,8 @@ Ini adalah layanan backend dari proyek **Sistem Parkir Otomatis BINUS**. Backend
 
 backend/
 ├── server.js
-├── routes/ (jika ada)
-├── db.js (opsional)
+├── routes
+├── db.js
 └── README.md
 
 ````
@@ -96,83 +92,6 @@ Gunakan Postman untuk menguji endpoint seperti:
 - Pastikan backend dapat menerima request dari frontend (aktifkan CORS).
 - Kamera dan deteksi kendaraan dilakukan dari frontend (TensorFlow\.js).
 
-````
-
----
-
-### ✅ `frontend/README.md`
-
-```markdown
-# 🖥️ Frontend - Sistem Parkir Otomatis BINUS
-
-Ini adalah antarmuka pengguna dari proyek **Sistem Parkir Otomatis BINUS**, dibangun menggunakan **React.js**. Terhubung dengan backend Express dan database MySQL.
-
-## 📦 Dependencies
-
-- react
-- axios
-- @tensorflow/tfjs
-- @tensorflow-models/coco-ssd
-- tailwindcss (opsional, untuk styling)
-
-## 📁 Struktur Direktori
-
-````
-
-frontend/
-├── public/
-│ └── index.html
-├── src/
-│ ├── App.js
-│ ├── App.css
-│ └── components/ (jika dipisah)
-└── README.md
-
-````
-
-## 🚀 Cara Menjalankan
-
-```bash
-npm install
-npm start
-````
-
-Frontend akan berjalan di: [http://localhost:3000](http://localhost:3000)
-
-## ⚙️ Fitur UI
-
-- 🚪 Akses RFID & Form Manual
-- 📋 Daftar Slot Parkir (terisi/kosong)
-- 🔎 Pencarian slot
-- 📷 Deteksi kendaraan via webcam (mobil, truk, bus)
-- 🧾 Log Aktivitas
-
-## 🧠 Deteksi Kendaraan
-
-Menggunakan **TensorFlow\.js + COCO-SSD** untuk mendeteksi objek `car`, `truck`, dan `bus`.
-
-Contoh:
-
-```js
-const model = await cocoSsd.load();
-const predictions = await model.detect(videoRef.current);
 ```
 
-## 💡 Tips UI/UX
-
-- Tambahkan notifikasi saat akses berhasil/gagal
-- Tambah indikator status kamera
-- Buat layout responsif (3 kolom: Akses | Slot | Kamera)
-
----
-
-## 🙋 Developer
-
-Frontend dikembangkan oleh Joshua Imanuel (Kris) sebagai bagian dari proyek sistem parkir otomatis di Universitas BINUS.
-
-```
-
----
-
-Kalau kamu mau, saya bisa bantu juga membuat satu **README.md utama** untuk root folder proyek (`/binus-parking-otomatis`) yang merangkum isi kedua folder tersebut. Apakah kamu ingin saya buatkan juga?
 ```
