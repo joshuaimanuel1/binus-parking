@@ -189,7 +189,14 @@ router.get("/parking-history/:rfid", (req, res) => {
   }
 
   const sql = `
-    SELECT pr.id, pr.slot_id, ps.slot_code, pr.time_in, pr.time_out
+    SELECT 
+      pr.id, 
+      pr.user_id AS rfid,
+      pr.plat, 
+      pr.slot_id, 
+      ps.slot_code, 
+      pr.time_in, 
+      pr.time_out
     FROM parking_records pr
     JOIN parking_slots ps ON pr.slot_id = ps.id
     WHERE pr.user_id = ?

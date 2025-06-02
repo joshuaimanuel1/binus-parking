@@ -7,24 +7,20 @@ Sistem Parkir Otomatis BINUS dirancang untuk mengelola akses dan monitoring park
 ## 2. Komponen Sistem
 
 ### a. Frontend (React.js)
-
 - Menyediakan antarmuka pengguna untuk melakukan pemindaian RFID, akses manual, dan melihat status slot parkir.
 - Menampilkan daftar slot parkir, status slot, dan pemantauan kamera secara real-time.
 - Mengkonsumsi API backend untuk mengambil dan mengirim data.
 
 ### b. Backend (Express.js + Node.js)
-
 - Menyediakan API RESTful untuk pengelolaan data parkir, slot, dan akses manual.
 - Berinteraksi dengan database untuk penyimpanan data pengguna, slot parkir, dan riwayat akses.
 - Memproses logika bisnis seperti verifikasi RFID dan update status slot parkir.
 
 ### c. Database (MySQL)
-
 - Menyimpan data utama: users, parking_slots, parking_records.
 - Mendukung operasi CRUD untuk slot parkir dan akses pengguna.
 
 ### d. Kamera & Deteksi Kendaraan
-
 - Kamera yang terpasang pada slot parkir menangkap video secara real-time.
 - Model Machine Learning (TensorFlow.js dengan COCO-SSD) mendeteksi kendaraan di slot parkir.
 - Backend menerima update status slot berdasarkan deteksi kendaraan dari frontend.
@@ -48,18 +44,18 @@ Sistem Parkir Otomatis BINUS dirancang untuk mengelola akses dan monitoring park
 
 ---
 
-+--------------------+ +-----------------+
-| Frontend | <--HTTP--> | Backend |
-| (React.js) | | (Express.js) |
-| | | |
-| - Scan RFID | | - API Handling |
-| - Manual Input | | - Logic & DB |
-| - Camera + ML | | |
-+--------------------+ +-----------------+
-| |
-| |
-v v
-+------------+ +------------+
-| Kamera & | | Database |
-| TensorFlow | | MySQL |
-+------------+ +------------+
++--------------------+            +-----------------+
+|    Frontend        | <--HTTP--> |   Backend       |
+| (React.js)         |            | (Express.js)    |
+|                    |            |                 |
+| - Scan RFID        |            | - API Handling  |
+| - Manual Input     |            | - Logic & DB    |
+| - Camera + ML      |            |                 |
++--------------------+            +-----------------+
+         |                                  |
+         |                                  |
+         v                                  v
+    +------------+                   +------------+
+    |  Kamera &  |                   |  Database  |
+    | TensorFlow |                   |   MySQL    |
+    +------------+                   +------------+
