@@ -1,0 +1,880 @@
+/* ========== Reset Dasar ========== */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  margin: 0;
+  padding: 0;
+  background: linear-gradient(135deg, #f0f4f8, #d9e2ec);
+  color: #2c3e50;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  min-height: 100vh;
+}
+
+/* ========== Layout Utama ========== */
+.App {
+  text-align: center;
+  padding: 40px 20px 80px;
+  max-width: 1300px;
+  margin: 0 auto;
+}
+
+.container {
+  background: #ffffffdd;
+  border-radius: 20px;
+  padding: 30px 40px;
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.1);
+}
+
+/* ========== Heading ========== */
+h1 {
+  font-weight: 700;
+  font-size: 2.8rem;
+  margin-bottom: 30px;
+  color: #34495e;
+  letter-spacing: 1px;
+}
+
+/* ========== Input RFID ========== */
+.rfid-box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 160px;
+  width: 280px;
+  background-color: #ffffff;
+  border: 3px dashed #2980b9;
+  border-radius: 20px;
+  margin: 0 auto 20px;
+  box-shadow: inset 0 0 15px rgba(0, 0, 0, 0.05);
+  transition: 0.3s ease;
+}
+
+.rfid-box:hover {
+  background-color: #ecf6ff;
+  border-color: #1abc9c;
+}
+
+.rfid-input-box {
+  font-size: 24px;
+  border: none;
+  outline: none;
+  background: transparent;
+  text-align: center;
+  width: 100%;
+  color: #2c3e50;
+  font-weight: bold;
+}
+
+.rfid-input {
+  padding: 14px 18px;
+  font-size: 18px;
+  width: 320px;
+  max-width: 100%;
+  border-radius: 12px;
+  border: 2px solid #2980b9;
+  outline: none;
+  margin-right: 15px;
+  margin-bottom: 15px;
+  box-shadow: 0 2px 6px rgba(41, 128, 185, 0.2);
+  transition: 0.3s ease;
+}
+
+.rfid-input:focus {
+  border-color: #1abc9c;
+  box-shadow: 0 2px 10px rgba(26, 188, 156, 0.4);
+}
+
+.manual-form {
+  margin-top: 30px;
+  background-color: #ffffff;
+  padding: 25px;
+  border-radius: 16px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: left;
+}
+
+.manual-form h3 {
+  font-size: 1.6rem;
+  color: #2c3e50;
+  margin-bottom: 20px;
+}
+
+.manual-form label {
+  display: block;
+  margin-bottom: 18px;
+}
+
+.manual-form label span {
+  display: block;
+  margin-bottom: 6px;
+  font-weight: 600;
+  color: #34495e;
+}
+
+.manual-form input,
+.manual-form select {
+  width: 100%;
+  padding: 12px 14px;
+  font-size: 16px;
+  border-radius: 10px;
+  border: 1px solid #bdc3c7;
+  background-color: #f9f9f9;
+  outline: none;
+  transition: border-color 0.3s ease;
+}
+
+.manual-form input:focus,
+.manual-form select:focus {
+  border-color: #2980b9;
+  background-color: #fff;
+}
+
+.manual-form-buttons {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.manual-form-buttons button {
+  flex: 1;
+  padding: 12px 20px;
+  font-size: 16px;
+  font-weight: bold;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.manual-form-buttons button:first-child {
+  background-color: #95a5a6;
+  color: #fff;
+}
+
+.manual-form-buttons button:first-child:hover {
+  background-color: #7f8c8d;
+  transform: translateY(-2px);
+}
+
+.manual-form-buttons button:last-child {
+  background-color: #2ecc71;
+  color: white;
+}
+
+.manual-form-buttons button:last-child:hover {
+  background-color: #27ae60;
+  transform: translateY(-2px);
+}
+
+/* ========== Tombol Aksi ========== */
+.manual-button {
+  text-align: center;
+  margin-top: 10px;
+}
+
+.get-slot-btn,
+.exit-btn {
+  padding: 14px 30px;
+  font-size: 18px;
+  font-weight: 600;
+  background: #2980b9;
+  color: #fff;
+  border: none;
+  border-radius: 14px;
+  cursor: pointer;
+  box-shadow: 0 8px 15px rgba(41, 128, 185, 0.3);
+  transition: all 0.3s ease;
+  user-select: none;
+  min-width: 180px;
+}
+
+.get-slot-btn:hover:not(:disabled),
+.exit-btn:hover:not(:disabled) {
+  background-color: #1abc9c;
+  box-shadow: 0 10px 20px rgba(26, 188, 156, 0.5);
+  transform: translateY(-3px);
+}
+
+.get-slot-btn:disabled,
+.exit-btn:disabled {
+  background-color: #95a5a6;
+  cursor: not-allowed;
+  box-shadow: none;
+  transform: none;
+}
+
+/* ========== Slot yang Didapat ========== */
+.slot {
+  margin-top: 20px;
+  font-size: 20px;
+  font-weight: 700;
+  color: #27ae60;
+  text-shadow: 1px 1px 2px #16a085aa;
+}
+
+/* ========== Daftar Slot Tersedia ========== */
+.available-slots {
+  margin-top: 50px;
+  text-align: left;
+}
+
+.available-slots h2 {
+  font-size: 2rem;
+  margin-bottom: 25px;
+  color: #34495e;
+}
+
+.slot-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 24px;
+}
+
+/* ========== Tampilan Slot ========== */
+.slot-box {
+  background-color: #ecf0f1;
+  border-radius: 18px;
+  padding: 22px 24px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.07);
+  transition: 0.3s ease;
+  cursor: default;
+  position: relative;
+}
+
+.slot-box:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 10px 22px rgba(0, 0, 0, 0.12);
+}
+
+.slot-box.occupied {
+  border-left: 8px solid #e74c3c;
+  background-color: #fbeaea;
+}
+
+.slot-box.available {
+  border-left: 8px solid #2ecc71;
+  background-color: #e8fbee;
+}
+
+.slot-code {
+  font-size: 22px;
+  font-weight: 700;
+  margin-bottom: 12px;
+  color: #34495e;
+}
+
+.slot-location {
+  font-size: 16px;
+  color: #7f8c8d;
+  user-select: none;
+}
+
+/* ========== Kamera Live Feed ========== */
+.multi-camera-section {
+  margin-top: 60px;
+  text-align: left;
+}
+
+.multi-camera-section h2 {
+  font-size: 2rem;
+  margin-bottom: 25px;
+  color: #34495e;
+}
+
+.camera-feed {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 14px;
+  margin-top: 12px;
+  border: 3px solid #bdc3c7;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: border-color 0.3s ease;
+}
+
+.camera-feed:hover {
+  border-color: #2980b9;
+  box-shadow: 0 6px 14px rgba(41, 128, 185, 0.5);
+}
+
+/* ========== Section Keluar Parkir ========== */
+.keluar-section {
+  margin-top: 60px;
+  padding: 35px 40px;
+  background-color: #ffffff;
+  border-radius: 20px;
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.08);
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.keluar-section h2 {
+  font-size: 2rem;
+  color: #34495e;
+  margin-bottom: 25px;
+  font-weight: 700;
+}
+
+/* ========== RFID Status Section ========== */
+.rfid-section {
+  margin-bottom: 30px;
+  padding: 20px;
+  background-color: #fefefe;
+  border-radius: 16px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.rfid-title {
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 10px;
+  color: #2c3e50;
+}
+
+.access-status {
+  font-size: 16px;
+  font-weight: 600;
+  margin: 8px 0;
+}
+
+.access-status.siap {
+  color: #2980b9;
+}
+
+.access-status.berhasil {
+  color: #2ecc71;
+}
+
+.access-status.gagal {
+  color: #e74c3c;
+}
+
+.access-status.memindai {
+  color: #f39c12;
+}
+
+.last-access {
+  font-size: 14px;
+  color: #7f8c8d;
+  font-style: italic;
+}
+
+/* ========== Responsive Design ========== */
+@media (max-width: 768px) {
+  .rfid-input {
+    width: 100%;
+    margin-right: 0;
+  }
+
+  .get-slot-btn,
+  .exit-btn {
+    width: 100%;
+    margin-top: 12px;
+  }
+
+  .slot-grid {
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  }
+
+  .multi-camera-section {
+    padding: 0 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  h1 {
+    font-size: 2rem;
+  }
+
+  .slot-code {
+    font-size: 18px;
+  }
+
+  .slot-location {
+    font-size: 14px;
+  }
+}
+
+/* ========== Penyesuaian Tambahan untuk Manual Form ========== */
+.manual-form input::placeholder,
+.manual-form select::placeholder {
+  color: #95a5a6;
+  font-style: italic;
+}
+
+.manual-form select {
+  appearance: none;
+  background-image: url("data:image/svg+xml;charset=US-ASCII,%3Csvg%20width%3D%22292%22%20height%3D%22292%22%20viewBox%3D%220%200%20292%20292%22%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%3E%3Cpath%20d%3D%22M287%2069c-4-4-10-4-14%200L146%20196%2019%2069c-4-4-10-4-14%200s-4%2010%200%2014l134%20134c4%204%2010%204%2014%200l134-134c4-4%204-10%200-14z%22%20fill%3D%22%2334495e%22/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 12px center;
+  background-size: 12px;
+}
+
+.manual-form input[type="text"],
+.manual-form select {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+@media (max-width: 600px) {
+  .manual-form {
+    padding: 20px;
+  }
+
+  .manual-form-buttons {
+    flex-direction: column;
+  }
+
+  .manual-form-buttons button {
+    width: 100%;
+  }
+}
+
+/* ========== Modal Overlay & Container ========== */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(44, 62, 80, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+  backdrop-filter: blur(4px);
+  animation: fadeIn 0.3s ease;
+}
+
+.modal {
+  background-color: #ffffff;
+  border-radius: 16px;
+  padding: 30px 40px;
+  max-width: 500px;
+  width: 90%;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  animation: slideUp 0.3s ease;
+}
+
+.modal h2 {
+  margin-bottom: 20px;
+  font-size: 1.8rem;
+  color: #2c3e50;
+}
+
+.modal p {
+  font-size: 16px;
+  color: #34495e;
+  margin-bottom: 25px;
+}
+
+.modal button {
+  padding: 12px 24px;
+  font-size: 16px;
+  background-color: #3498db;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.modal button:hover {
+  background-color: #2980b9;
+  transform: translateY(-2px);
+}
+
+/* ========== Modal Animations ========== */
+@keyframes fadeIn {
+  from {
+    background-color: rgba(44, 62, 80, 0);
+  }
+  to {
+    background-color: rgba(44, 62, 80, 0.5);
+  }
+}
+
+@keyframes slideUp {
+  from {
+    transform: translateY(50px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f4;
+}
+
+.App {
+  text-align: center;
+  padding: 20px;
+}
+
+.container {
+  max-width: 100%;
+}
+
+h1 {
+  margin-bottom: 20px;
+  color: #333;
+}
+
+nav {
+  margin-bottom: 20px;
+}
+
+button {
+  padding: 10px 20px;
+  margin: 5px;
+  background-color: #007bff;
+  border: none;
+  color: white;
+  cursor: pointer;
+  border-radius: 6px;
+}
+
+button:disabled {
+  background-color: #cccccc;
+  cursor: not-allowed;
+}
+
+button:hover:not(:disabled) {
+  background-color: #0056b3;
+}
+
+/* Layout Tiga Kolom */
+.horizontal-layout {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 20px;
+}
+
+/* Kolom */
+.column {
+  background-color: white;
+  border-radius: 10px;
+  padding: 20px;
+  flex: 1;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
+  max-height: 90vh;
+  overflow-y: auto;
+}
+
+/* Input dan Form */
+.rfid-input-box {
+  width: 100%;
+  padding: 10px;
+  margin: 8px 0;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  font-size: 16px;
+}
+
+.get-slot-btn {
+  width: 100%;
+  padding: 10px;
+  margin-top: 10px;
+  font-size: 16px;
+  background-color: #28a745;
+  border: none;
+  color: white;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.get-slot-btn:hover {
+  background-color: #218838;
+}
+
+.manual-access {
+  margin-top: 20px;
+  text-align: left;
+}
+
+.slot {
+  font-size: 20px;
+  color: green;
+  margin-top: 10px;
+}
+
+.access-status {
+  margin-top: 10px;
+  font-weight: bold;
+}
+
+.access-status.siap {
+  color: black;
+}
+.access-status.memindai {
+  color: orange;
+}
+.access-status.berhasil {
+  color: green;
+}
+.access-status.gagal {
+  color: red;
+}
+
+.last-access {
+  margin-top: 5px;
+  font-style: italic;
+  color: #666;
+}
+
+/* Slot Grid */
+.slot-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 12px;
+  margin-top: 10px;
+}
+
+.slot-box {
+  padding: 10px;
+  border-radius: 8px;
+  background-color: #e9ecef;
+  text-align: left;
+}
+
+.slot-box.available {
+  background-color: #d4edda;
+  border-left: 5px solid #28a745;
+}
+
+.slot-box.occupied {
+  background-color: #f8d7da;
+  border-left: 5px solid #dc3545;
+}
+
+.slot-code {
+  font-weight: bold;
+  font-size: 16px;
+}
+
+.slot-location {
+  font-size: 14px;
+  color: #555;
+}
+
+/* Kamera */
+.camera-feed {
+  width: 100%;
+  border-radius: 8px;
+  margin-top: 5px;
+}
+
+/* Log Aktivitas */
+.log-list {
+  list-style: none;
+  padding: 0;
+  text-align: left;
+  margin-top: 10px;
+}
+
+.log-list li {
+  background: #f1f1f1;
+  margin-bottom: 6px;
+  padding: 8px 10px;
+  border-radius: 4px;
+  font-size: 14px;
+}
+
+.manual-button {
+  margin-top: 20px;
+  padding: 10px 20px;
+  background-color: #2980b9;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.manual-button:hover {
+  background-color: #1f6391;
+}
+
+.modal-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 999;
+}
+
+.modal-content {
+  background: white;
+  padding: 30px;
+  border-radius: 20px;
+  width: 90%;
+  max-width: 400px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+}
+
+.modal-input {
+  display: block;
+  width: 100%;
+  padding: 10px 12px;
+  margin: 12px 0;
+  border: 2px solid #ccc;
+  border-radius: 8px;
+  font-size: 16px;
+}
+
+.modal-actions {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+.modal-btn,
+.modal-cancel {
+  padding: 10px 20px;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+  border: none;
+}
+
+.modal-btn {
+  background-color: #27ae60;
+  color: white;
+}
+
+.modal-btn:hover {
+  background-color: #219150;
+}
+
+.modal-cancel {
+  background-color: #e74c3c;
+  color: white;
+}
+
+.modal-cancel:hover {
+  background-color: #c0392b;
+}
+
+.rfid-input-box {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 15px;
+  border-radius: 10px;
+  border: 2px solid #3498db;
+  font-size: 16px;
+  transition: border-color 0.3s ease;
+}
+
+.rfid-input-box:focus {
+  outline: none;
+  border-color: #2980b9;
+  box-shadow: 0 0 5px rgba(41, 128, 185, 0.4);
+}
+
+.modal-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.6);
+  z-index: 999;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal {
+  background: white;
+  padding: 30px;
+  border-radius: 15px;
+  width: 350px;
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.2);
+  text-align: left;
+}
+
+.get-slot-btn.cancel {
+  background-color: #ccc;
+  color: black;
+}
+
+.rfid-card-box {
+  width: 320px;
+  height: 200px;
+  border: 2px dashed #0077cc;
+  border-radius: 12px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto 20px auto;
+  background-color: #f9f9f9;
+  position: relative;
+}
+
+.rfid-card-box input {
+  width: 90%;
+  height: 40px;
+  font-size: 18px;
+  padding: 8px;
+  text-align: center;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+}
+
+.parking-history-container {
+  padding: 20px;
+  max-width: 900px;
+  margin: auto;
+  background: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0 0 10px #ccc;
+}
+
+.history-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.history-table th,
+.history-table td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: center;
+}
+
+.history-table th {
+  background-color: #007bff;
+  color: white;
+  font-weight: bold;
+}
+
+.history-table tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+.history-table tr:hover {
+  background-color: #ddd;
+}
