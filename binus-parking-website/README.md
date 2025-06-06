@@ -22,7 +22,7 @@ frontend/
 ├── src/
 │ ├── App.js
 │ ├── App.css
-│ └── components/ (jika menggunakan komponen terpisah)
+│ └── components/ 
 └── README.md
 ```
 ````
