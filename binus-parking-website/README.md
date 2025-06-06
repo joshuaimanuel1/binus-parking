@@ -15,7 +15,7 @@ Ini adalah antarmuka pengguna dari proyek **Sistem Parkir Otomatis BINUS**, diba
 
 ## 📁 Struktur Direktori
 ```
-
+```
 frontend/
 ├── public/
 │ └── index.html
@@ -24,7 +24,7 @@ frontend/
 │ ├── App.css
 │ └── components/ (jika menggunakan komponen terpisah)
 └── README.md
-
+```
 ````
 
 ## 🚀 Cara Menjalankan
