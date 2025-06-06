@@ -14,13 +14,13 @@ Ini adalah layanan backend dari proyek **Sistem Parkir Otomatis BINUS**. Backend
 
 ## 📁 Struktur Direktori
 ```
-
+```
 backend/
 ├── server.js
 ├── routes
 ├── db.js
 └── README.md
-
+```
 ````
 
 ## 🚀 Cara Menjalankan
