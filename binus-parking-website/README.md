@@ -12,10 +12,9 @@ Ini adalah antarmuka pengguna dari proyek **Sistem Parkir Otomatis BINUS**, diba
 - @tensorflow/tfjs
 - @tensorflow-models/coco-ssd
 - tailwindcss (jika digunakan)
-
+```
+```
 ## 📁 Struktur Direktori
-```
-```
 frontend/
 ├── public/
 │ └── index.html
