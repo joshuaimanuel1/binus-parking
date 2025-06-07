@@ -215,9 +215,3 @@ Frontend akan berjalan di `http://localhost:3000`
 - Integrasi dengan sistem parkir fisik dan hardware RFID.
 
 ```
-
----
-
-Kalau kamu mau, saya juga bisa bantu buatkan diagram `architecture.png` sekarang.
-Mau saya buat dan kirimkan?
-```
