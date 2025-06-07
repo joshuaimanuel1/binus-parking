@@ -214,4 +214,3 @@ Frontend akan berjalan di `http://localhost:3000`
 - Penambahan fitur dashboard admin.
 - Integrasi dengan sistem parkir fisik dan hardware RFID.
 
-```
