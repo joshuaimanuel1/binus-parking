@@ -42,9 +42,11 @@ Sistem Parkir Otomatis BINUS dirancang untuk mengelola akses dan monitoring park
 - Frontend juga mengakses kamera lokal dan menjalankan model deteksi kendaraan.
 - Status slot parkir terupdate secara real-time di backend dan frontend.
 
+## Sistem Parkir Otomatis BINUS
 
+Berikut ini adalah arsitektur sistem secara garis besar:
 
----
+```
 +--------------------+            +-----------------+
 |    Frontend        | <--HTTP--> |   Backend       |
 | (React.js)         |            | (Express.js)    |
@@ -60,4 +62,4 @@ Sistem Parkir Otomatis BINUS dirancang untuk mengelola akses dan monitoring park
     |  Kamera &  |                   |  Database  |
     | TensorFlow |                   |   MySQL    |
     +------------+                   +------------+
----
+```
