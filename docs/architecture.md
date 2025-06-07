@@ -43,7 +43,6 @@ Sistem Parkir Otomatis BINUS dirancang untuk mengelola akses dan monitoring park
 - Status slot parkir terupdate secara real-time di backend dan frontend.
 
 ---
----
 +--------------------+            +-----------------+
 |    Frontend        | <--HTTP--> |   Backend       |
 | (React.js)         |            | (Express.js)    |
