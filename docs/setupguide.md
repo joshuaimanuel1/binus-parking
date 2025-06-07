@@ -99,7 +99,3 @@ Frontend akan berjalan di `http://localhost:3000`.
 - Menambahkan fitur autentikasi dengan JWT.
 - Integrasi sistem dengan hardware RFID dan kamera secara nyata.
 - Dashboard admin untuk pengelolaan pengguna dan slot parkir.
-
-```
-
-```
