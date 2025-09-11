@@ -1,6 +1,6 @@
 # 🚗 Sistem Parkir Otomatis BINUS
 
-Proyek ini merupakan sistem parkir otomatis berbasis web yang terintegrasi dengan deteksi kendaraan dan RFID untuk universitas BINUS. Sistem ini dapat memindai kartu RFID, mengalokasikan slot parkir, serta memantau slot secara langsung melalui kamera.
+Proyek ini merupakan sistem parkir otomatis berbasis web yang terintegrasi dengan deteksi kendaraan dan RFID untuk universitas BINUS. Sistem ini dapat memindai kartu RFID, mengalokasikan slot parkir, serta memantau slot secara langsung melalui kamera. 
 
 ## 🧩 Fitur Utama
 
@@ -8,7 +8,7 @@ Proyek ini merupakan sistem parkir otomatis berbasis web yang terintegrasi denga
 - ✍️ Akses manual jika RFID gagal
 - 📷 Pemantauan real-time dengan kamera (object detection menggunakan TensorFlow)
 - 📊 Log aktivitas parkir
-- 🔎 Pencarian dan status slot parkir
+- 🔎 Pencarian dan status slot parkir 
 
 ---
 
